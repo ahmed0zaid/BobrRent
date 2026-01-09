@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: #F4F7F6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bobrrent.controllers.HomeController">
+    <left>
+        <VBox prefHeight="600.0" prefWidth="230.0" style="-fx-background-color: #2E5525; -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" prefHeight="150.0" prefWidth="230.0" spacing="10.0">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/logoBOBR.png" />
+                            </image>
+                        </ImageView>
+                        <Label text="BóbrRent" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <VBox prefHeight="350.0" prefWidth="230.0" spacing="15.0">
+                    <padding>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="190.0" style="-fx-background-color: #3E6B32; -fx-background-radius: 10;" text="  🏠  Dashboard" textFill="WHITE">
+                            <font><Font name="System Bold" size="14.0" /></font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="190.0" style="-fx-background-color: transparent;" text="  🚗  Browse Cars" textFill="WHITE" />
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="190.0" style="-fx-background-color: transparent;" text="  📅  My Bookings" textFill="WHITE" />
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="190.0" style="-fx-background-color: transparent;" text="  👤  Profile" textFill="WHITE" />
+                    </children>
+                </VBox>
+                <VBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="230.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #7A4E2D; -fx-background-radius: 20;" text="Logout" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets bottom="30.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="25.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="30.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="640.0">
+                    <children>
+                        <Label text="Welcome back, Driver!" textFill="#2E5525">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="Jan 9, 2026" textFill="#7A4E2D">
+                            <font><Font size="14.0" /></font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox prefHeight="160.0" prefWidth="640.0" spacing="30.0">
+                    <children>
+                        <VBox prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                            <children>
+                                <Label text="Available Cars" textFill="#7A4E2D" />
+                                <Label text="24" textFill="#2E5525">
+                                    <font><Font name="System Bold" size="48.0" /></font>
+                                </Label>
+                                <Label text="Ready to rent" textFill="#999999" />
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                            <children>
+                                <Label text="Active Bookings" textFill="#7A4E2D" />
+                                <Label text="02" textFill="#2E5525">
+                                    <font><Font name="System Bold" size="48.0" /></font>
+                                </Label>
+                                <Label text="Check status" textFill="#999999" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <VBox prefHeight="250.0" prefWidth="640.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                    <children>
+                        <Label text="Recent Fleet Additions" textFill="#2E5525">
+                            <font><Font name="System Bold" size="18.0" /></font>
+                            <padding><Insets bottom="10.0" left="20.0" top="20.0" /></padding>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                        <Label text="Fetching live car data from server..." textFill="#999999">
+                            <padding><Insets left="20.0" top="20.0" /></padding>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

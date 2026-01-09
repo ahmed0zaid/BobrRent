@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane blendMode="LIGHTEN" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="602.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bobrrent.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="602.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bobrrent.controllers.LoginController">
    <children>
       <ImageView fitHeight="260.0" fitWidth="214.0" layoutX="30.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Downloads/logoBOBR.png" />
+             <Image url="@../images/mylogobobr.png" />
          </image>
       </ImageView>
       <Label layoutX="202.0" prefHeight="113.0" prefWidth="394.0" text="WELCOME BACK TO YOUR ACCOUNT !" textAlignment="CENTER" textFill="#7a4e2d" textOverrun="CENTER_ELLIPSIS">
@@ -34,7 +34,7 @@
             <Font name="Roboto" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="create" layoutX="259.0" layoutY="241.0" mnemonicParsing="false" onAction="#handlelogin" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #2E5525;" text="SIGN IN" textFill="WHITE" />
+      <Button fx:id="create" layoutX="259.0" layoutY="241.0" mnemonicParsing="false" onAction="#handlelogin" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #2E5525;" text="LOG IN" textFill="WHITE" />
       <Label layoutX="275.0" layoutY="278.0" prefHeight="18.0" prefWidth="263.0" text="--------------------   or   ----------------------" textAlignment="CENTER" textOverrun="CLIP" />
       <Label layoutX="337.0" layoutY="296.0" text="New here ? ">
          <font>

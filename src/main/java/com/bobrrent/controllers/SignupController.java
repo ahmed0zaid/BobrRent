@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.net.*;
 import java.util.ResourceBundle;
+import javafx.scene.control.DatePicker;
 
 public class SignupController implements Initializable {
 
@@ -22,6 +23,7 @@ public class SignupController implements Initializable {
     @FXML private TextField phone;
     @FXML private PasswordField password;
     @FXML private ChoiceBox<String> genderChoiceBox;
+    @FXML private DatePicker birthDatePicker;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -32,13 +34,16 @@ public class SignupController implements Initializable {
 
         if (phone.getText().isEmpty() || password.getText().isEmpty() ||
                 first_name.getText().isEmpty() || last_name.getText().isEmpty() ||
-                genderChoiceBox.getValue() == null) {
+                genderChoiceBox.getValue() == null || birthDatePicker.getValue() == null) {
             System.out.println("Error: SORRY YOU CAN'T LEAVE EMPTY FIELDS");
                 return;
         }
+
+        String bday = birthDatePicker.getValue().toString();
+
         String message = "SIGNUP," + phone.getText() + "," + password.getText() + "," +
                 first_name.getText() + "," + last_name.getText() + "," +
-                genderChoiceBox.getValue();
+                genderChoiceBox.getValue() + "," + bday;
 
         try (Socket socket = new Socket("localhost", 1234);
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);

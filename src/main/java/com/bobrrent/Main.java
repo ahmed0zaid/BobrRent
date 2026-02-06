@@ -8,11 +8,12 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/home.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setTitle("BóbrRent - Login");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.setMaximized(true);
         stage.show();
     }
 

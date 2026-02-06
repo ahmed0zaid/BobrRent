@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.*;
 import java.net.*;
+import com.bobrrent.utils.UserSession;
 
 public class LoginController {
 
@@ -28,12 +29,8 @@ public class LoginController {
             String response = in.readLine();
 
             if ("SUCCESS".equals(response)) {
-                System.out.println("Login Successful");
-                try {
-                    gotohome(event);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                UserSession.setPhone(phone.getText());
+                gotohome(event);
             } else {
                 System.out.println("Login Failed.");
             }

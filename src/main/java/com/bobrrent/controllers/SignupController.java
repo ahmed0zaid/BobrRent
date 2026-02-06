@@ -15,6 +15,10 @@ import java.io.*;
 import java.net.*;
 import java.util.ResourceBundle;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class SignupController implements Initializable {
 
@@ -24,6 +28,7 @@ public class SignupController implements Initializable {
     @FXML private PasswordField password;
     @FXML private ChoiceBox<String> genderChoiceBox;
     @FXML private DatePicker birthDatePicker;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,15 +40,34 @@ public class SignupController implements Initializable {
         if (phone.getText().isEmpty() || password.getText().isEmpty() ||
                 first_name.getText().isEmpty() || last_name.getText().isEmpty() ||
                 genderChoiceBox.getValue() == null || birthDatePicker.getValue() == null) {
-            System.out.println("Error: SORRY YOU CAN'T LEAVE EMPTY FIELDS");
-                return;
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("SORRY, YOU CAN'T LEAVE EMPTY FIELDS");
+            alert.showAndWait();
+            System.out.println("SORRY, YOU CAN'T LEAVE EMPTY FIELDS");
+            return;
         }
 
-        String bday = birthDatePicker.getValue().toString();
+        //String bday = birthDatePicker.getValue().toString();
+        LocalDate birthday = birthDatePicker.getValue();
+        LocalDate today = LocalDate.now();
+        int age = Period.between(birthday, today).getYears();
+
+        if (age < 18) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Registration Restricted");
+            alert.setHeaderText("Age Requirement Not Met");
+            alert.setContentText("You must be at least 18 years old to use BóbrRent. Your current age is: " + age);
+
+            alert.showAndWait();
+            System.out.println("Warning: Age Requirement Not Met at least 18 years old");
+            return;
+        }
+
 
         String message = "SIGNUP," + phone.getText() + "," + password.getText() + "," +
                 first_name.getText() + "," + last_name.getText() + "," +
-                genderChoiceBox.getValue() + "," + bday;
+                genderChoiceBox.getValue() + "," + birthday;
 
         try (Socket socket = new Socket("localhost", 1234);
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
@@ -54,10 +78,20 @@ public class SignupController implements Initializable {
 
             if ("SUCCESS".equals(response)) {
                 System.out.println("Account created!");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Account Created");
+                alert.setContentText("You have been successfully created!");
+                alert.showAndWait();
                 goToLoginPage(event);
             }
         } catch (IOException e) {
             System.out.println("Server Error: Registration failed.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Server Error");
+            alert.setContentText("Registration failed");
+            alert.showAndWait();
         }
     }
     @FXML

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20.0" style="-fx-background-color: white; -fx-padding: 30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bobrrent.controllers.BookingController">
+    <children>
+        <Label fx:id="carNameLabel" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Car Name" />
+        <GridPane hgap="10.0" vgap="15.0">
+            <children>
+                <Label text="Start Date:" GridPane.rowIndex="0" />
+                <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="End Date:" GridPane.rowIndex="1" />
+                <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Total Price:" GridPane.rowIndex="2" />
+                <Label fx:id="totalPriceLabel" text="0.00 €" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+            </children>
+        </GridPane>
+        <HBox spacing="15.0" alignment="CENTER">
+            <Button onAction="#handleConfirm" style="-fx-background-color: #2E5525; -fx-text-fill: white;" text="Confirm Booking" />
+            <Button onAction="#handleCancel" text="Cancel" />
+        </HBox>
+    </children>
+</VBox>

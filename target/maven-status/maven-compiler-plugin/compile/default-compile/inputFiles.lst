@@ -1,7 +1,12 @@
 C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\server\BobrServer.java
+C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\utils\UserSession.java
+C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\controllers\MyBookingsController.java
 C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\controllers\LoginController.java
 C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\Main.java
+C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\controllers\BookingController.java
 C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\controllers\HomeController.java
+C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\controllers\ProfileController.java
 C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\controllers\SignupController.java
+C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\controllers\BrowsecarController.java
 C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\models\Car.java
 C:\Users\pc\IdeaProjects\BobrRent\src\main\java\com\bobrrent\models\User.java

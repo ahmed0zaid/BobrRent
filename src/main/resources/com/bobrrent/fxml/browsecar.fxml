@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="25.0" style="-fx-background-color: #F4F7F6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bobrrent.controllers.BrowsecarController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+    <children>
+        <VBox spacing="10.0">
+            <children>
+                <Label text="Find Your Perfect Ride" textFill="#2E5525">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <Label text="Choose from our premium fleet in Kielce" textFill="#7a7a7a">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="45.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets left="15.0" right="15.0" />
+                    </padding>
+                    <children>
+                        <Label text="🔍" style="-fx-font-size: 16;" />
+                        <TextField fx:id="searchField" onKeyReleased="#handleSearch" promptText="Search by brand or model..." style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox spacing="10.0">
+                    <children>
+                        <Button text="All Cars" style="-fx-background-color: #2E5525; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 8 20;" />
+                        <Button text="SUV" style="-fx-background-color: white; -fx-text-fill: #2E5525; -fx-background-radius: 20; -fx-padding: 8 20; -fx-border-color: #2E5525; -fx-border-radius: 20;" />
+                        <Button text="Sedan" style="-fx-background-color: white; -fx-text-fill: #2E5525; -fx-background-radius: 20; -fx-padding: 8 20; -fx-border-color: #2E5525; -fx-border-radius: 20;" />
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+
+        <Separator prefWidth="200.0" />
+
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #F4F7F6;" VBox.vgrow="ALWAYS">
+            <content>
+                <FlowPane fx:id="carContainer" hgap="30.0" vgap="30.0" prefWrapLength="900.0" style="-fx-background-color: #F4F7F6;" />
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>
